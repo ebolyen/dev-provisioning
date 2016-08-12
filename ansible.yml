@@ -1,0 +1,7 @@
+---
+
+- name: update ansible
+  hosts: localhost
+  become: true
+  roles:
+    - name: update-ansible

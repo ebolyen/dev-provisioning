@@ -1,0 +1,12 @@
+---
+
+- name: install bash
+  become_user: root
+  apt:
+    name: bash
+    state: latest
+
+- name: alias sudo
+  lineinfile:
+    line: "alias sudo='sudo '"
+    dest: "{{ home }}/.bashrc"

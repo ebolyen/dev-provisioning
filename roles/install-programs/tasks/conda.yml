@@ -1,0 +1,32 @@
+---
+
+- name: download conda install script
+  become_user: root
+  get_url:
+    url: https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    dest: /opt/Miniconda3-latest-Linux-x86_64.sh
+
+- name: run conda installer
+  become_user: root
+  command: bash /opt/Miniconda3-latest-Linux-x86_64.sh -bp /opt/Miniconda3
+  args:
+    creates: /opt/Miniconda3
+
+- name: setup conda in bashrc
+  blockinfile:
+    marker: "# {mark} Miniconda3 configuration"
+    block: | 
+      export PATH=/opt/Miniconda3/bin:$PATH
+      alias a="source activate"
+      alias d="source deactivate"
+      _activate_complete () {
+         local cur="${COMP_WORDS[COMP_CWORD]}";
+         COMPREPLY=($(compgen -W "`cd $HOME/.conda/envs && ls -d *`" -- "$cur"));
+      }
+      complete -F _activate_complete "a"
+    dest: "{{ home }}/.bashrc"
+
+- name: init conda env dir
+  file:
+    path: "{{ home }}/.conda/envs"
+    state: directory

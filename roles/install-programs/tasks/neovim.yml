@@ -1,0 +1,55 @@
+---
+
+- name: add neovim PPA
+  become_user: root
+  apt_repository:
+    repo: "ppa:neovim-ppa/unstable"
+
+- name: install neovim
+  become_user: root
+  apt:
+    name: neovim
+    state: latest
+
+- name: alias nvim to vi/vim
+  lineinfile:
+    line: "alias {{ item }}=nvim"
+    dest: "{{ home }}/.bashrc"
+  with_items:
+    - vi
+    - vim
+
+- name: set default editor
+  lineinfile:
+    line: "export EDITOR=nvim"
+    dest: "{{ home }}/.bashrc"
+
+- name: create autoload dir in neovim config
+  file:
+    path: "{{ home }}/.config/nvim/autoload"
+    state: directory
+
+- name: install vim-plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: "{{ home }}/.config/nvim/autoload/plug.vim"
+
+- name: copy init.vim
+  copy:
+    src: init.vim
+    dest: "{{ home }}/.config/nvim/init.vim"
+    backup: yes
+
+- name: create colors dir in neovim config
+  file:
+    path: "{{ home }}/.config/nvim/colors"
+    state: directory
+
+- name: copy molokai.vim
+  copy:
+    src: molokai.vim
+    dest: "{{ home }}/.config/nvim/colors/molokai.vim"
+
+- name: install neovim plugins
+  pause:
+    prompt: Please run `nvim +PlugInstall`. Press <Enter> when complete. 

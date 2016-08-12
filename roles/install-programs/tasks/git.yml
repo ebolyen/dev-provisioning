@@ -1,0 +1,19 @@
+---
+
+- name: install git
+  become_user: root
+  apt:
+    name: git
+    state: latest
+
+- name: set git email
+  git_config:
+    name: user.email
+    value: "{{ email }}"
+    scope: global
+
+- name: set git name
+  git_config:
+    name: user.name
+    value: "{{ fullname }}"
+    scope: global

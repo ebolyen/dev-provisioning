@@ -1,0 +1,57 @@
+---
+
+- name: install htop
+  become_user: root
+  apt:
+    name: htop
+    state: latest
+
+- name: install tree
+  become_user: root
+  apt:
+    name: tree
+    state: latest
+
+- name: isntall xclip
+  become_user: root
+  apt:
+    name: xclip
+    state: latest
+
+- name: install cowsay
+  become_user: root
+  apt:
+    name: cowsay
+    state: latest
+
+- name: no fucking ansible cows
+  lineinfile:
+    line: nocows = 1
+    dest: /etc/ansible/ansible.cfg
+    insertafter: ^\[defaults\]$
+
+- name: install fortune
+  become_user: root
+  apt:
+    name: fortune
+    state: latest
+
+- name: install lolcat
+  become_user: root
+  apt:
+    name: lolcat
+    state: latest
+
+- name: install ascii
+  become_user: root
+  apt:
+    name: ascii
+    state: latest
+
+- name: install espeak
+  become_user: root
+  apt:
+    name: espeak
+    state: latest
+
+

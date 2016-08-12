@@ -1,0 +1,28 @@
+---
+
+- name: setup font dir
+  become_user: root
+  file:
+    path: /usr/share/fonts/truetype/FantasqueSansMono
+    state: directory
+
+- name: download fantasque-sans
+  become_user: root
+  unarchive:
+    src: 'https://github.com/belluzj/fantasque-sans/releases/download/v1.7.1/FantasqueSansMono.tar.gz'
+    dest: /usr/share/fonts/truetype/FantasqueSansMono
+    copy: no
+
+- name: get current font
+  shell: 'gsettings get org.gnome.desktop.interface monospace-font-name'
+  register: current_font
+  changed_when: false
+
+- name: reset font cache
+  command: fc-cache -f -v
+  when: current_font.stdout != "'Fantasque Sans Mono 12'"
+
+- name: set fantasque-sans as system mono
+  command: gsettings set org.gnome.desktop.interface monospace-font-name 'Fantasque Sans Mono 12'
+  when: current_font.stdout != "'Fantasque Sans Mono 12'"
+

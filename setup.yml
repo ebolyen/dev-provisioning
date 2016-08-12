@@ -1,0 +1,10 @@
+---
+
+- name: set up dev machine
+  hosts: localhost
+  become: true
+  become_user: "{{ user }}"
+  roles:
+    - install-programs
+    - global-config
+
