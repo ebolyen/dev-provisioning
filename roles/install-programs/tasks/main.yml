@@ -7,4 +7,5 @@
 - include: conda.yml
 - include: uuid.yml
 - include: gnome-terminal.yml
+- include: powerline.yml
 - include: misc.yml

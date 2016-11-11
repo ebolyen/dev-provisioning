@@ -25,6 +25,7 @@
     state: latest
 
 - name: no fucking ansible cows
+  become_user: root
   lineinfile:
     line: nocows = 1
     dest: /etc/ansible/ansible.cfg
