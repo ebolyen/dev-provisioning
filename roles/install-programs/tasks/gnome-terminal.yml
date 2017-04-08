@@ -2,14 +2,14 @@
 
 - name: install/update gnome-terminal
   become_user: root
-  apt:
+  pacman:
     name: gnome-terminal
     state: latest
 
 - name: install dconf-cli
   become_user: root
-  apt:
-    name: dconf-cli
+  pacman:
+    name: dconf
     state: latest
 
 - name: download monokai theme for gnome-terminal

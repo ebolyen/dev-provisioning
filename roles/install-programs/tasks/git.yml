@@ -2,7 +2,7 @@
 
 - name: install git
   become_user: root
-  apt:
+  pacman:
     name: git
     state: latest
 

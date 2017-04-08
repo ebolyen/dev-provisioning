@@ -2,7 +2,7 @@
 
 - name: install bash
   become_user: root
-  apt:
+  pacman:
     name: bash
     state: latest
 

@@ -21,7 +21,7 @@
       alias d="source deactivate"
       _activate_complete () {
          local cur="${COMP_WORDS[COMP_CWORD]}";
-         COMPREPLY=($(compgen -W "`cd $HOME/.conda/envs && ls -d *`" -- "$cur"));
+         COMPREPLY=($(compgen -W "`find $HOME/.conda/envs -maxdepth 1 -type d -exec basename {} \; | tail -n +2`" -- "$cur"));
       }
       complete -F _activate_complete "a"
     dest: "{{ home }}/.bashrc"
