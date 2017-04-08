@@ -2,25 +2,25 @@
 
 - name: install htop
   become_user: root
-  apt:
+  pacman:
     name: htop
     state: latest
 
 - name: install tree
   become_user: root
-  apt:
+  pacman:
     name: tree
     state: latest
 
 - name: isntall xclip
   become_user: root
-  apt:
+  pacman:
     name: xclip
     state: latest
 
 - name: install cowsay
   become_user: root
-  apt:
+  pacman:
     name: cowsay
     state: latest
 
@@ -33,25 +33,25 @@
 
 - name: install fortune
   become_user: root
-  apt:
-    name: fortune
+  pacman:
+    name: fortune-mod
     state: latest
 
 - name: install lolcat
   become_user: root
-  apt:
+  pacman:
     name: lolcat
     state: latest
 
 - name: install ascii
   become_user: root
-  apt:
+  pacman:
     name: ascii
     state: latest
 
 - name: install espeak
   become_user: root
-  apt:
+  pacman:
     name: espeak
     state: latest
 

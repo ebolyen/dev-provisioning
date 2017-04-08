@@ -10,7 +10,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'robinfehr/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
-"Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -51,15 +50,10 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeGitStatusWithFlags = 0
 let g:NERDTreeGitStatusNodeColorization = 1
 
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = '<'
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeMinimalUI = 1
 
 let g:nerdtree_tabs_open_on_console_startup=1
 
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:WebDevIconsUnicodeDecorateFileNodes = 0
-"let g:DevIconsEnableFoldersOpenClose = 1
-"let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-"let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1

@@ -1,13 +1,8 @@
 ---
 
-- name: add neovim PPA
-  become_user: root
-  apt_repository:
-    repo: "ppa:neovim-ppa/unstable"
-
 - name: install neovim
   become_user: root
-  apt:
+  pacman:
     name: neovim
     state: latest
 
