@@ -1,0 +1,9 @@
+---
+
+- name: add keybindings
+  blockinfile:
+    block: |
+      {{ lookup('file', 'keybindings.vim') }}
+    marker: "\" {mark} keybindings \""
+    dest: "{{ vimrc }}"
+

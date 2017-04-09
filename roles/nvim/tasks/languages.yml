@@ -1,0 +1,11 @@
+---
+
+- name: add language packs
+  lineinfile:
+    line: "Plug '{{ item }}'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+  with_items:
+    - pearofducks/ansible-vim
+    - pangloss/vim-javascript
+    - mxw/vim-jsx

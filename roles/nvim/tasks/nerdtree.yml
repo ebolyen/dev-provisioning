@@ -1,0 +1,20 @@
+---
+
+- name: add nerdtree, nerdtree-git-plugin, nerdtree-tabs
+  lineinfile:
+    line: "Plug '{{ item }}'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+  with_items:
+    - scrooloose/nerdtree
+    - robinfehr/nerdtree-git-plugin
+    - jistr/vim-nerdtree-tabs
+
+- name: add nerdtree config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'nerdtree.vim') }}
+    marker: "\" {mark} nerdtree \""
+    dest: "{{ vimrc }}"
+
+

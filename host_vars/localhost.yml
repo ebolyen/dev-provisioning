@@ -1,5 +1,7 @@
 ansible_connection: local
 home: /home/evan
+bashrc: /home/evan/.bashrc
+vimrc: /home/evan/.config/nvim/init.vim
 user: evan
 email: ebolyen@gmail.com
 fullname: Evan Bolyen

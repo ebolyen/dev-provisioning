@@ -1,0 +1,10 @@
+
+---
+
+- name: set global config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'config.vim') }}
+    marker: "\" {mark} global config \""
+    dest: "{{ vimrc }}"
+

@@ -1,0 +1,16 @@
+---
+
+- name: add vim-gitgutter
+  lineinfile:
+    line: "Plug 'airblade/vim-gitgutter'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+
+- name: add vim-airline config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'gitgutter.vim') }}
+    marker: "\" {mark} gitgutter \""
+    dest: "{{ vimrc }}"
+
+
