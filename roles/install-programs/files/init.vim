@@ -22,6 +22,8 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 set encoding=utf8
 
+set updatetime=200
+
 " Skip the default mode indicator as vim-airline has a powerline
 set noshowmode
 let g:airline_theme='base16_shell'
