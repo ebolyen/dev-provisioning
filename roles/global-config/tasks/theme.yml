@@ -1,0 +1,5 @@
+---
+
+- name: set theme to numix frost
+  command: "gsettings set org.gnome.desktop.interface gtk-theme 'Numix-Frost'"
+

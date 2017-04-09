@@ -10,3 +10,10 @@
   lineinfile:
     line: "alias sudo='sudo '"
     dest: "{{ home }}/.bashrc"
+
+- name: ps1 prompt
+  blockinfile:
+    marker: "# {mark} PS1 Prompt"
+    block: |
+      {{ lookup('file', '../templates/ps1') }}
+    dest: "{{ home }}/.bashrc"

@@ -2,7 +2,7 @@
 
 - include: bash.yml
 - include: git.yml
-#- include: neovim.yml
+- include: neovim.yml
 #- include: tmux.yml
 - include: conda.yml
 #- include: uuid.yml

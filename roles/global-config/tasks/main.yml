@@ -1,3 +1,5 @@
 ---
 
 - include: fantasque-sans-mono-font.yml
+- include: base16.yml
+- include: theme.yml
