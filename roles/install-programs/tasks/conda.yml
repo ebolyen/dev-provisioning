@@ -14,7 +14,7 @@
 
 - name: update conda
   become_user: root
-  command: /opt/Miniconda3/bin/conda update conda
+  command: /opt/Miniconda3/bin/conda update -y conda
 
 - name: setup conda in bashrc
   blockinfile:
