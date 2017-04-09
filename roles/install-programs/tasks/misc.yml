@@ -24,7 +24,7 @@
     name: cowsay
     state: latest
 
-- name: no fucking ansible cows
+- name: no ansible cows
   become_user: root
   lineinfile:
     line: nocows = 1

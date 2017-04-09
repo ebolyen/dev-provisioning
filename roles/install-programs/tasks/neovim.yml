@@ -35,16 +35,6 @@
     dest: "{{ home }}/.config/nvim/init.vim"
     backup: yes
 
-- name: create colors dir in neovim config
-  file:
-    path: "{{ home }}/.config/nvim/colors"
-    state: directory
-
-- name: copy molokai.vim
-  copy:
-    src: molokai.vim
-    dest: "{{ home }}/.config/nvim/colors/molokai.vim"
-
 - name: install neovim plugins
   pause:
     prompt: Please run `nvim +PlugInstall`. Press <Enter> when complete. 
