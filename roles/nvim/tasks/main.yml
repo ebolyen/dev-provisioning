@@ -1,0 +1,12 @@
+---
+
+- include: init.yml 
+- include: config.yml
+- include: keybindings.yml
+- include: languages.yml
+- include: airline.yml
+- include: gitgutter.yml
+- include: nerdtree.yml
+- include: colors.yml
+- debug:
+    msg: Please run `nvim +PlugInstall`. 

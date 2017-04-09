@@ -18,23 +18,3 @@
   lineinfile:
     line: "export EDITOR=nvim"
     dest: "{{ home }}/.bashrc"
-
-- name: create autoload dir in neovim config
-  file:
-    path: "{{ home }}/.config/nvim/autoload"
-    state: directory
-
-- name: install vim-plug
-  get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: "{{ home }}/.config/nvim/autoload/plug.vim"
-
-- name: copy init.vim
-  copy:
-    src: init.vim
-    dest: "{{ home }}/.config/nvim/init.vim"
-    backup: yes
-
-- name: install neovim plugins
-  pause:
-    prompt: Please run `nvim +PlugInstall`. Press <Enter> when complete. 

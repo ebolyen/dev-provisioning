@@ -1,0 +1,16 @@
+---
+
+- name: add vim-airline
+  lineinfile:
+    line: "Plug 'vim-airline/vim-airline'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+
+- name: add vim-airline config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'airline.vim') }}
+    marker: "\" {mark} airline \""
+    dest: "{{ vimrc }}"
+
+

@@ -1,11 +1,9 @@
 ---
 
-- name: set up dev machine
+- name: set up neovim
   hosts: localhost
   become: true
   become_user: "{{ user }}"
   roles:
-    - install-programs
-    - global-config
     - nvim
 

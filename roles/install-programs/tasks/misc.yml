@@ -12,6 +12,22 @@
     name: tree
     state: latest
 
+- name: alias tree to tree -C
+  lineinfile:
+    line: alias tree="tree -C"
+    dest: "{{ bashrc }}"
+
+- name: install uuid
+  become_user: root
+  apt:
+    name: uuid
+    state: latest
+
+- name: alias uuid to uuid -v 4
+  lineinfile:
+    line: alias uuid="uuid -v 4"
+    dest: "{{ bashrc }}"
+
 - name: isntall xclip
   become_user: root
   pacman:

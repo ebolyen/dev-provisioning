@@ -1,0 +1,19 @@
+---
+
+# Coupled to everything, assumes base16-shell is installed
+- name: add colorscheme plugins
+  lineinfile:
+    line: "Plug '{{ item }}'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+  with_items:
+    - chriskempson/base16-vim
+    - vim-airline/vim-airline-themes
+
+- name: add colorscheme config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'colors.vim') }}
+    marker: "\" {mark} theme \""
+    dest: "{{ vimrc }}"
+
