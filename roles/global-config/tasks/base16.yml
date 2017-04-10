@@ -13,3 +13,9 @@
       [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
       alias recolor='RAND_ENV=`alias -p | grep -Eo "(_base16 ".*" [a-z\-]*)" | head -n -1  | shuf -n 1`; echo $RAND_ENV | cut -d " " -f3 | cowsay; eval $RAND_ENV'
     dest: "{{ home }}/.bashrc"
+
+- name: fix git diff.meta color for base16
+  git_config:
+    name: color.diff.meta
+    value: black bold
+    scope: global
