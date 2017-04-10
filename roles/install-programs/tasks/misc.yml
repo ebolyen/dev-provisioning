@@ -17,7 +17,12 @@
     line: alias tree="tree -C"
     dest: "{{ bashrc }}"
 
-- name: isntall xclip
+- name: alias uuid
+  lineinfile:
+    line: alias uuid='python -c "import uuid; print(uuid.uuid4())"'
+    dest: "{{ bashrc }}"
+
+- name: install xclip
   become_user: root
   pacman:
     name: xclip

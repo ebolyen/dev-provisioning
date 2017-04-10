@@ -11,3 +11,7 @@ set fillchars+=vert:┃
 " Bash-like tab completion
 set wildmode=longest,list,full
 set wildmenu
+
+" Split style
+set splitbelow
+set splitright
