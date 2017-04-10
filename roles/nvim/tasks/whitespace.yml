@@ -1,0 +1,16 @@
+---
+
+- name: add vim-better-whitespace
+  lineinfile:
+    line: "Plug 'ntpeters/vim-better-whitespace'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+
+- name: add vim-better-whitespace config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'whitespace.vim') }}
+    marker: "\" {mark} whitespace \""
+    dest: "{{ vimrc }}"
+
+

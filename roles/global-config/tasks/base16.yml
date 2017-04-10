@@ -8,7 +8,7 @@
 - name: setup base16 in bashrc
   blockinfile:
     marker: "# {mark} Base16 Configuration"
-    block: | 
+    block: |
       BASE16_SHELL=$HOME/.config/base16-shell/
       [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
       alias recolor='RAND_ENV=`alias -p | grep -Eo "(_base16 ".*" [a-z\-]*)" | head -n -1  | shuf -n 1`; echo $RAND_ENV | cut -d " " -f3 | cowsay; eval $RAND_ENV'

@@ -10,11 +10,15 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-map <C-n> :NERDTreeToggle<CR>
-
 " Enter adds lines in visual mode
 nmap <S-CR> O<Esc>
 nmap <CR> o<Esc>
 
 " Write the damn thing
 cmap w!! w !sudo tee % >/dev/null
+
+cmap qq qa
+
+" Plugin command hotkeys
+map <C-n> :NERDTreeToggle<CR>
+map <C-s> :StripWhitespace<CR>
