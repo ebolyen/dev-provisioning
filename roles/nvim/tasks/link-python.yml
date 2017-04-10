@@ -1,0 +1,18 @@
+---
+
+- name: create neovim conda env
+  become_user: root
+  command: /opt/Miniconda3/bin/conda create -p /opt/nvim-py3 -y python
+  args:
+    creates: /opt/nvim-py3
+
+- name: pip install neovim
+  become_user: root
+  pip:
+    name: neovim
+    executable: /opt/nvim-py3/bin/pip
+
+- name: add python path to config
+  lineinfile:
+    line: "let g:python3_host_prog = '/opt/nvim-py3/bin/python'"
+    dest: "{{ vimrc }}"

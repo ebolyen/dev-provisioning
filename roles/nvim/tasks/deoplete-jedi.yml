@@ -1,0 +1,21 @@
+---
+
+- name: pip install jedi
+  become_user: root
+  pip:
+    name: jedi
+    executable: /opt/nvim-py3/bin/pip
+
+- name: add deoplete-jedi
+  lineinfile:
+    line: "Plug '{{ item }}', { 'do': ':UpdateRemotePlugins' }"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+  with_items:
+    - Shougo/deoplete.nvim
+    - zchee/deoplete-jedi
+
+- name: add deoplete to startup
+  lineinfile:
+    line: "let g:deoplete#enable_at_startup = 1"
+    dest: "{{ vimrc }}"
