@@ -1,3 +1,5 @@
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', '__pycache__', 'build', 'dist', 'htmlcov']
+
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeMouseMode = 2

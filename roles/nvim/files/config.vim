@@ -1,3 +1,4 @@
+set mouse=a
 set encoding=utf8
 set colorcolumn=80
 
