@@ -19,7 +19,7 @@
 - name: setup conda in bashrc
   blockinfile:
     marker: "# {mark} Miniconda3 configuration"
-    block: | 
+    block: |
       export PATH=/opt/Miniconda3/bin:$PATH
       alias a="source activate"
       alias d="source deactivate"
