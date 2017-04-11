@@ -12,5 +12,3 @@
       {{ lookup('file', 'airline.vim') }}
     marker: "\" {mark} airline \""
     dest: "{{ vimrc }}"
-
-

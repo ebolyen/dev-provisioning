@@ -64,5 +64,3 @@
   pacman:
     name: espeak
     state: latest
-
-

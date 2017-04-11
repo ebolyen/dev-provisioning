@@ -16,4 +16,3 @@
     dest: "{{ vimrc }}"
     backup: yes
     force: no
-

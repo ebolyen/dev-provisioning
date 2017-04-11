@@ -16,4 +16,3 @@
       {{ lookup('file', 'colors.vim') }}
     marker: "\" {mark} theme \""
     dest: "{{ vimrc }}"
-
