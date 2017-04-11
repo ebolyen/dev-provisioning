@@ -25,5 +25,3 @@ function egit (){
 
 # enable git flavored prompt
 egit;
-
-

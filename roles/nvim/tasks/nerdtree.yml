@@ -16,5 +16,3 @@
       {{ lookup('file', 'nerdtree.vim') }}
     marker: "\" {mark} nerdtree \""
     dest: "{{ vimrc }}"
-
-

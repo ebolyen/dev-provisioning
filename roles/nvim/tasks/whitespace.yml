@@ -12,5 +12,3 @@
       {{ lookup('file', 'whitespace.vim') }}
     marker: "\" {mark} whitespace \""
     dest: "{{ vimrc }}"
-
-

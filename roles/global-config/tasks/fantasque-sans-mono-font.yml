@@ -23,4 +23,3 @@
 - name: set fantasque-sans as system mono
   command: gsettings set org.gnome.desktop.interface monospace-font-name 'FantasqueSansMono Nerd Font 12'
   when: current_font.stdout != "'FantasqueSansMono Nerd Font 12'"
-

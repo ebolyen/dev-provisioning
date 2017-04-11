@@ -12,5 +12,3 @@
       {{ lookup('file', 'gitgutter.vim') }}
     marker: "\" {mark} gitgutter \""
     dest: "{{ vimrc }}"
-
-

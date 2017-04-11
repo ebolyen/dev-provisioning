@@ -6,4 +6,3 @@
       {{ lookup('file', 'config.vim') }}
     marker: "\" {mark} global config \""
     dest: "{{ vimrc }}"
-
