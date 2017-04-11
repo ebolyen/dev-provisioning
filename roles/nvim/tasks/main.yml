@@ -9,6 +9,7 @@
 - include: whitespace.yml
 - include: airline.yml
 - include: gitgutter.yml
+- include: rootignore.yml
 - include: nerdtree.yml
 - include: colors.yml
 - debug:

@@ -1,4 +1,10 @@
-let NERDTreeIgnore = ['\.pyc$', '\.egg-info$', '__pycache__', 'build', 'dist', 'htmlcov']
+" Ignore .git directory, but not .gitignore
+let g:NERDTreeIgnore = ['^\.git$', '\.git/.*']
+" If RootIgnore is installed, .gitignore will be used to generate wildignore
+let g:NERDTreeRespectWildIgnore = 1
+" Show dotfiles by default, things we don't care about should have been
+" handled by .gitignore
+let g:NERDTreeShowHidden = 1
 
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
