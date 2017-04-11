@@ -1,0 +1,7 @@
+---
+
+- name: add rootignore
+  lineinfile:
+    line: "Plug 'octref/RootIgnore'"
+    insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"

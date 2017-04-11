@@ -1,10 +1,10 @@
 set mouse=a
 set encoding=utf8
 set colorcolumn=80
-
-" Gutter
-set number
 set relativenumber
+
+" Disable for quickfix windows
+au FileType qf setlocal norelativenumber colorcolumn=
 
 " Window seperator
 set fillchars+=vert:┃
