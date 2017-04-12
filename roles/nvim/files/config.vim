@@ -16,3 +16,8 @@ set wildmenu
 " Split style
 set splitbelow
 set splitright
+
+"                                   Hack to debounce the first LeftRelease as that would drop out of terminal
+" Terminals will automatically      mode according to nvim/terminal.c (remove this if that ever changes...)
+" switch to insert mode.            which prevents the prior startinsert from working when navigating with mouse
+au BufEnter term://* startinsert | tnoremap <LeftRelease> <C-\><C-n>:tunmap <lt>LeftRelease><cr>:startinsert<cr>
