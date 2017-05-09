@@ -2,6 +2,13 @@
 
 - name: add rootignore
   lineinfile:
-    line: "Plug 'octref/RootIgnore'"
+    line: "Plug 'ebolyen/RootIgnore'"
     insertbefore: 'call plug#end\(\)'
+    dest: "{{ vimrc }}"
+
+- name: add rootignore config
+  blockinfile:
+    block: |
+      {{ lookup('file', 'rootignore.vim') }}
+    marker: "\" {mark} rootignore \""
     dest: "{{ vimrc }}"

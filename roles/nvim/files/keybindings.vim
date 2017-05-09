@@ -1,3 +1,5 @@
+nnoremap ; :
+vnoremap ; :
 " Mapping for sane window navigation, even in terminal mode
 " terminal mode:
 tnoremap <A-h> <C-\><C-n><C-w>h

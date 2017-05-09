@@ -2,6 +2,8 @@ set mouse=a
 set encoding=utf8
 set colorcolumn=80
 set relativenumber
+set number
+set title
 
 " Disable for quickfix windows
 au FileType qf setlocal norelativenumber colorcolumn=
