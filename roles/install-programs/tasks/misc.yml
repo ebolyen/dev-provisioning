@@ -69,4 +69,9 @@
   become_user: root
   pacman:
     name: jq
+
+- name: install cmus
+  become_user: root
+  pacman:
+    name: cmus
     state: latest

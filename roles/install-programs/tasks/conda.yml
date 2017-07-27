@@ -16,6 +16,10 @@
   become_user: root
   command: /opt/Miniconda3/bin/conda update -y conda
 
+- name: install conda-build
+  become_user: root
+  command: /opt/Miniconda3/bin/conda install -y conda-build
+
 - name: setup conda in bashrc
   blockinfile:
     marker: "# {mark} Miniconda3 configuration"
