@@ -64,3 +64,9 @@
   pacman:
     name: espeak
     state: latest
+
+- name: install jq
+  become_user: root
+  pacman:
+    name: jq
+    state: latest
