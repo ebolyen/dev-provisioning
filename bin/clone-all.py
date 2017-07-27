@@ -27,7 +27,7 @@ def main(auth, dest):
             clone(repo['ssh_url'], os.path.join(dest, user, repo['name']))
 
 
-def github(path, auth, per_page=5, **kwargs):
+def github(path, auth, per_page=100, **kwargs):
     if not path.startswith('/'):
         raise ValueError("Path doesn't start with '/'")
     params = "?per_page=%d" % per_page
