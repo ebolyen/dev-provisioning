@@ -1,5 +1,5 @@
 " Ignore .git directory, but not .gitignore
-let g:NERDTreeIgnore = ['^\.git$', '\.git/.*', '__pycache__$', '.egg-info$', 'dist$', 'build$']
+let g:NERDTreeIgnore = ['^\.git$', '\.git/.*', '__pycache__$', '.egg-info$', 'dist$', 'build$', 'node_modules$']
 " If RootIgnore is installed, .gitignore will be used to generate wildignore
 let g:NERDTreeRespectWildIgnore = 1
 " Show dotfiles by default, things we don't care about should have been
