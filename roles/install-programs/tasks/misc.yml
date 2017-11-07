@@ -28,6 +28,16 @@
     name: xclip
     state: latest
 
+- name: alias ctrl-c
+  lineinfile:
+    line: alias ctrl-c='xclip -selection c -i'
+    dest: "{{ bashrc }}"
+
+- name: alias ctrl-v
+  lineinfile:
+    line: alias ctrl-v='xclip -selection c -o'
+    dest: "{{ bashrc }}"
+
 - name: install cowsay
   become_user: root
   pacman:
