@@ -7,6 +7,12 @@ set title
 " Disable for quickfix windows
 au FileType qf setlocal norelativenumber colorcolumn=
 
+" Language indents
+au FileType python setl sw=4 sts=4 et
+au FileType rust setl sw=4 sts=4 et
+au FileType javascript setl sw=2 sts=2 et
+au FileType json setl sw=2 sts=2 et
+
 " Window seperator
 set fillchars+=vert:┃
 

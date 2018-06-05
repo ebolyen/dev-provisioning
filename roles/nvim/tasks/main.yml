@@ -5,7 +5,7 @@
 - include: config.yml
 - include: keybindings.yml
 - include: languages.yml
-#- include: deoplete-jedi.yml
+- include: deoplete-jedi.yml
 - include: whitespace.yml
 - include: airline.yml
 - include: gitgutter.yml
