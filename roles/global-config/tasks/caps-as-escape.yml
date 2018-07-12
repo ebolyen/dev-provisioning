@@ -1,0 +1,10 @@
+---
+
+- name: get xkb-options
+  shell: 'gsettings get org.gnome.desktop.input-sources xkb-options'
+  register: xkb_options
+  changed_when: false
+
+- name: set xkb-options
+  shell: 'gsettings set org.gnome.desktop.input-sources xkb-options "[''caps:escape'']"'
+  when: "'caps:escape' not in xkb_options.stdout"

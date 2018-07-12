@@ -1,0 +1,7 @@
+---
+
+- name: install google chrome
+  become_user: root
+  aur:
+    name: google-chrome
+    user: "{{ user }}"

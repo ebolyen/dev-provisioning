@@ -1,0 +1,7 @@
+---
+
+- name: install slack
+  become_user: root
+  aur:
+    name: slack-desktop
+    user: "{{ user }}"
