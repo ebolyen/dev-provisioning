@@ -1,0 +1,22 @@
+---
+
+- name: get terminal keybind name
+  shell: gsettings get org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ name
+  register: terminal_name
+  changed_when: false
+
+- name: set terminal binding
+  shell: "gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ binding '<Primary><Alt>t'"
+  when: terminal_name.stdout != "'Terminal'"
+
+- name: set terminal command
+  shell: "gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ command 'gnome-terminal'"
+  when: terminal_name.stdout != "'Terminal'"
+
+- name: set terminal name
+  shell: "gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ name 'Terminal'"
+  when: terminal_name.stdout != "'Terminal'"
+
+- name: associate keybinding
+  shell: 'gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[''/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/'']"'
+  when: terminal_name.stdout != "'Terminal'"
