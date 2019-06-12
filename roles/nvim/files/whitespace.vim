@@ -1,1 +1,1 @@
-autocmd VimEnter * CurrentLineWhitespaceOff soft
+let g:current_line_whitespace_disabled_soft=1
