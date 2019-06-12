@@ -4,6 +4,5 @@
 - include: git.yml
 - include: neovim.yml
 - include: conda.yml
-- include: slack.yml
-- include: chrome.yml
+#- include: chrome.yml
 - include: misc.yml

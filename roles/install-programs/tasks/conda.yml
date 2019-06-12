@@ -34,7 +34,3 @@
       complete -F _activate_complete "a"
     dest: "{{ bashrc }}"
 
-- name: init conda env dir
-  file:
-    path: "{{ home }}/.conda/envs"
-    state: directory

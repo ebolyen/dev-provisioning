@@ -2,7 +2,7 @@
 
 - name: install bash
   become_user: root
-  pacman:
+  zypper:
     name: bash
     state: latest
 

@@ -2,13 +2,13 @@
 
 - name: install htop
   become_user: root
-  pacman:
+  zypper:
     name: htop
     state: latest
 
 - name: install tree
   become_user: root
-  pacman:
+  zypper:
     name: tree
     state: latest
 
@@ -24,7 +24,7 @@
 
 - name: install xclip
   become_user: root
-  pacman:
+  zypper:
     name: xclip
     state: latest
 
@@ -40,7 +40,7 @@
 
 - name: install cowsay
   become_user: root
-  pacman:
+  zypper:
     name: cowsay
     state: latest
 
@@ -53,35 +53,35 @@
 
 - name: install fortune
   become_user: root
-  pacman:
-    name: fortune-mod
+  zypper:
+    name: fortune
     state: latest
 
-- name: install lolcat
-  become_user: root
-  pacman:
-    name: lolcat
-    state: latest
+    # - name: install lolcat
+    #   become_user: root 
+    #   zypper:
+    #     name: ruby2.6-rubygem-lolcat
+    #     state: latest
 
-- name: install ascii
-  become_user: root
-  pacman:
-    name: ascii
-    state: latest
+    # - name: install ascii
+    #   become_user: root
+    #   zypper:
+    #     name: ascii
+    #     state: latest
 
 - name: install espeak
   become_user: root
-  pacman:
+  zypper:
     name: espeak
     state: latest
 
 - name: install jq
   become_user: root
-  pacman:
+  zypper:
     name: jq
 
 - name: install cmus
   become_user: root
-  pacman:
+  zypper:
     name: cmus
     state: latest

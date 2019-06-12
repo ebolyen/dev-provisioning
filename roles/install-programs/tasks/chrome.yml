@@ -1,7 +1,16 @@
 ---
 
+- name: add google repo
+  become_user: root
+  zypper_repository:
+    name: google-chrome-repo
+    repo: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    auto_import_keys: yes
+    state: present
+
 - name: install google chrome
   become_user: root
-  aur:
-    name: google-chrome
-    user: "{{ user }}"
+  zypper:
+    name: google-chrome-stable
+    state: present
+    disable_gpg_check: yes

@@ -2,7 +2,7 @@
 
 - name: install neovim
   become_user: root
-  pacman:
+  zypper:
     name: neovim
     state: latest
 
